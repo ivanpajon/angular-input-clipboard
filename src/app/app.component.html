@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-form-field appearance="standard" color="primary" class="field">
+
+    <mat-label>Escribe un texto</mat-label>
+
+    <input matInput type="text" [formControl]="textControl" />
+
+    <button mat-icon-button matSuffix color="primary"
+      [disabled]="!textControl.value?.trim()"
+      (click)="copyToClipboard()">
+      <mat-icon>file_copy</mat-icon>
+    </button>
+
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" color="primary" class="field">
+
+    <mat-label>Escribe un texto</mat-label>
+
+    <textarea matInput [formControl]="textAreaControl"></textarea>
+
+    <button mat-icon-button matSuffix color="primary"
+      [disabled]="!textAreaControl.value?.trim()"
+      (click)="longCopyToClipboard()">
+      <mat-icon>file_copy</mat-icon>
+    </button>
+
+  </mat-form-field>
+</div>
